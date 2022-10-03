@@ -35,7 +35,7 @@ def test_card(card)->int:
   cv2.imshow("Flashcard", img)
   cv2.waitKey(1)
   for key,value in card.items():
-    if not (key == "path" or key == "score" or key == "streak"):
+    if not (key in ["path", "score", "streak", "output"]):
       answer = input(f"What's the {key}: ")
       questions+=1
       if answer.lower() == value.lower():
@@ -43,6 +43,7 @@ def test_card(card)->int:
         print("Correct!")
       else:
         print(f"Incorrect, the correct answer is {value}.")
+      print(card["output"])
   
   cv2.destroyAllWindows() # destroy all windows
   return (score, questions)
