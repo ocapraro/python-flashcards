@@ -43,7 +43,7 @@ def test_card(card)->int:
         print("Correct!")
       else:
         print(f"Incorrect, the correct answer is {value}.")
-      print(card["output"])
+  print(card["output"])
   
   cv2.destroyAllWindows() # destroy all windows
   return (score, questions)
